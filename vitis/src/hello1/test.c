@@ -5,7 +5,6 @@
 #include "xgpio_l.h"
 #include "sleep.h"
 
-#include "xspi.h"
 #include "xintc.h"
 
 int main()
