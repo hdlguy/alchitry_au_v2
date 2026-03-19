@@ -22,5 +22,10 @@ module top (
         //
         .led_gpio_tri_o     (led)
     );
+    
+    // debug
+    logic[8:0] dbg_count=0;
+    always_ff @(posedge clk) dbg_count <= dbg_count + 1;
+    top_ila ila_inst (.clk(clk), .probe0(dbg_count)); // 9
 
 endmodule

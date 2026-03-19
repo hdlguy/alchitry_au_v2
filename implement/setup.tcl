@@ -11,7 +11,7 @@ set_property default_lib work [current_project]
 load_features ipintegrator
 tclapp::install ultrafast -quiet
 
-source ../source/spi_ila.tcl
+source ../source/top_ila.tcl
 
 source ../source/system.tcl
 

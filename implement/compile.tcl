@@ -23,7 +23,7 @@ write_debug_probes      -force  ./results/top.ltx
 write_mem_info          -force  ./results/top.mmi
 
 
-write_bitstream -verbose -force -file ./results/top.bit
+write_bitstream -verbose -bin_file -force -file ./results/top.bit
 
 file copy ./results/top.bit ./proj.runs/impl_1/ 
 write_hw_platform -fixed -include_bit -force -file ./results/top.xsa
