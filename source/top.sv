@@ -4,6 +4,7 @@ module top (
     input   logic           rstn,
     //
     output  logic[7:0]      led,
+    //output  logic[24:1]     io_led,
     //
     input   logic           usb_uart_rxd,
     output  logic           usb_uart_txd
@@ -12,6 +13,7 @@ module top (
     logic clk;
     assign clk = clkin100;
     
+    logic[31:0] gpo;
     system system_i (
         //
         .clkin100           (clk),
@@ -20,8 +22,12 @@ module top (
         .usb_uart_rxd       (usb_uart_rxd),
         .usb_uart_txd       (usb_uart_txd),
         //
-        .led_gpio_tri_o     (led)
+        .led_gpio_tri_o     (gpo)
     );
+    
+    // LEDs
+    assign led = gpo[7:0];
+    //assign io_led = gpo[31:8];
     
     // debug
     logic[8:0] dbg_count=0;
